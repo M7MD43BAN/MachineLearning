@@ -20,7 +20,7 @@ dataframe = dataframe.replace({
 WCSS = []
 k_range = range(1, 11)
 for k in k_range:
-    kmeans = KMeans(n_clusters=k)
+    kmeans = KMeans(n_clusters=k, n_init=10, random_state=1)
     kmeans.fit(dataframe[['Gender', 'Age', 'Annual Income (k$)', 'Spending Score (1-100)']])
     WCSS.append(kmeans.inertia_)
 

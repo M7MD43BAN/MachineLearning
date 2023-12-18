@@ -19,7 +19,7 @@ dataframe = dataframe.replace({
 
 # Apply KMedoids clustering algorithm
 k_optimal = 5
-kmedoids = KMedoids(n_clusters=k_optimal)
+kmedoids = KMedoids(n_clusters=k_optimal, random_state=1)
 kmedoids.fit(dataframe[['Gender', 'Age', 'Annual Income (k$)', 'Spending Score (1-100)']])
 y_predict = kmedoids.labels_
 dataframe['Cluster'] = y_predict
